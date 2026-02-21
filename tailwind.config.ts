@@ -51,14 +51,14 @@ const config: Config = {
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "DM Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
           "sans-serif",
         ],
-        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+        mono: ["DM Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
         "fluid-h1": "clamp(2rem, 1.5rem + 2.5vw, 3.5rem)",
