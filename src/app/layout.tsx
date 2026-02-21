@@ -4,6 +4,11 @@ import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { WhatsAppButton } from "@/components/layout/whatsapp-button";
+import {
+  OrganizationSchema,
+  LocalBusinessSchema,
+  WebSiteSchema,
+} from "@/components/structured-data";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -65,6 +70,9 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetbrainsMono.variable} font-sans antialiased`}
       >
+        <OrganizationSchema />
+        <LocalBusinessSchema />
+        <WebSiteSchema />
         <Header />
         <main className="min-h-screen pt-16">{children}</main>
         <Footer />
