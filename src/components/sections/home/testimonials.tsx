@@ -27,24 +27,27 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <Section>
+    <Section className="bg-[#0a0a0a]">
       <FadeIn>
-        <SectionHeader title="O que dizem nossos clientes" />
+        <SectionHeader 
+          label="04 — Depoimentos"
+          title={<>O que dizem <span className="text-jumper-orange">nossos clientes</span></>}
+        />
       </FadeIn>
 
-      <StaggerContainer className="grid gap-6 md:grid-cols-3">
+      <StaggerContainer className="grid gap-4 md:grid-cols-3 mt-10">
         {testimonials.map((t) => (
           <StaggerItem key={t.quote}>
-            <div className="relative rounded-lg border border-border bg-card p-6 h-full">
+            <div className="relative rounded-xl border border-border-subtle bg-card p-6 h-full transition-all duration-300 hover:bg-[hsl(var(--card-hover))] hover:border-border-medium hover:-translate-y-0.5">
               <Quote className="h-8 w-8 text-jumper-orange/20 mb-4" />
-              <blockquote className="text-foreground leading-relaxed mb-6">
+              <blockquote className="text-foreground leading-[1.8] mb-6 italic text-[14px]">
                 &ldquo;{t.quote}&rdquo;
               </blockquote>
-              <div className="border-t border-border pt-4">
-                <p className="text-sm font-medium text-foreground">
+              <div className="border-t border-border-subtle pt-4">
+                <p className="text-[13px] font-medium text-foreground">
                   {t.author}
                 </p>
-                <p className="text-xs text-muted-foreground">{t.company}</p>
+                <p className="text-[12px] text-text-muted font-mono tracking-[0.03em] mt-1">{t.company}</p>
               </div>
             </div>
           </StaggerItem>

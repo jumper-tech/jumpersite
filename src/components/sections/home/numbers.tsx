@@ -12,14 +12,14 @@ const stats = [
 
 export function NumbersSection() {
   return (
-    <Section className="border-y border-border">
-      <StaggerContainer className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+    <Section className="bg-[#0a0a0a]">
+      <StaggerContainer className="grid grid-cols-2 gap-12 lg:grid-cols-4">
         {stats.map((stat) => (
-          <StaggerItem key={stat.label} className="text-center">
-            <div className="text-3xl sm:text-4xl lg:text-5xl font-bold text-jumper-orange">
+          <StaggerItem key={stat.label} className="text-left">
+            <div className="font-mono text-[48px] font-bold leading-none text-border-medium mb-5">
               {stat.value}
             </div>
-            <p className="mt-2 text-sm text-muted-foreground">{stat.label}</p>
+            <p className="text-[13px] text-text-secondary leading-[1.7]">{stat.label}</p>
           </StaggerItem>
         ))}
       </StaggerContainer>

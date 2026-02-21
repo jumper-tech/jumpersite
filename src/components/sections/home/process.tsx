@@ -11,6 +11,7 @@ const steps = [
     title: "Diagnóstico",
     description:
       "Analisamos seu tracking atual, suas campanhas e seu funil. Identificamos onde estão os vazamentos de dados e as oportunidades.",
+    color: "orange" as const,
   },
   {
     icon: Wrench,
@@ -18,6 +19,7 @@ const steps = [
     title: "Setup Técnico",
     description:
       "Implementamos tracking server-side (sGTM), Meta CAPI, Enhanced Conversions e integramos seu CRM com as plataformas de ads.",
+    color: "purple" as const,
   },
   {
     icon: BarChart3,
@@ -25,6 +27,7 @@ const steps = [
     title: "Gestão Ativa",
     description:
       "Estruturamos e gerenciamos suas campanhas com dados limpos. Criativos, audiências, budget — tudo otimizado com sinal de qualidade.",
+    color: "orange" as const,
   },
   {
     icon: RefreshCcw,
@@ -32,34 +35,39 @@ const steps = [
     title: "Otimização Contínua",
     description:
       "Relatórios com dados reais, reuniões regulares, ajustes constantes. O algoritmo aprende com dados melhores, e o resultado compõe mês a mês.",
+    color: "gray" as const,
   },
 ];
 
 export function ProcessSection() {
+  const getTopBorder = (color: "orange" | "purple" | "gray") => {
+    switch (color) {
+      case "orange": return "border-t-jumper-orange";
+      case "purple": return "border-t-purple";
+      case "gray": return "border-t-text-muted";
+    }
+  };
+
   return (
     <Section id="como-funciona" className="bg-[#0a0a0a]">
       <FadeIn>
-        <SectionHeader title="Como funciona" />
+        <SectionHeader 
+          label="01 — Como Funciona"
+          title={<>Como funciona a <span className="text-jumper-orange">Arquitetura de Performance</span></>}
+        />
       </FadeIn>
 
-      <StaggerContainer className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-        {steps.map((step, i) => (
+      <StaggerContainer className="grid gap-4 md:grid-cols-2 lg:grid-cols-4 mt-10">
+        {steps.map((step) => (
           <StaggerItem key={step.title}>
-            <div className="relative">
-              {/* Connector line */}
-              {i < steps.length - 1 && (
-                <div className="hidden lg:block absolute top-6 left-12 right-0 h-px bg-gradient-to-r from-jumper-orange/40 via-jumper-orange/20 to-transparent translate-x-4" />
-              )}
-              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-jumper-orange/10 text-jumper-orange mb-4">
-                <step.icon className="h-6 w-6" />
+            <div className={`relative bg-card border border-border-subtle rounded-xl p-7 transition-all duration-300 hover:bg-[hsl(var(--card-hover))] hover:border-border-medium hover:-translate-y-0.5 border-t-2 ${getTopBorder(step.color)}`}>
+              <div className="font-mono text-[9px] tracking-[0.15em] uppercase text-text-muted mb-3.5">
+                ETAPA {step.step}
               </div>
-              <span className="text-xs font-mono text-jumper-orange/60">
-                {step.step}
-              </span>
-              <h3 className="mt-1 text-lg font-semibold text-white">
+              <h3 className="text-[15px] font-semibold text-white mb-3 leading-[1.4]">
                 {step.title}
               </h3>
-              <p className="mt-2 text-sm text-gray-400 leading-relaxed">
+              <p className="text-[13px] text-text-secondary leading-[1.7]">
                 {step.description}
               </p>
             </div>

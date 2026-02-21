@@ -16,20 +16,22 @@ export function ServiceCTA({
   ctaHref = "/diagnostico",
 }: ServiceCTAProps) {
   return (
-    <section className="py-20 sm:py-24 bg-[#0a0a0a]">
-      <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-        <FadeIn>
-          <h2 className="text-fluid-h2 font-bold text-white text-balance">
-            {title}
-          </h2>
-        </FadeIn>
-        <FadeIn delay={0.15}>
-          <div className="mt-8">
-            <Button variant="critical" size="xl" asChild>
-              <Link href={ctaHref}>{ctaText}</Link>
-            </Button>
-          </div>
-        </FadeIn>
+    <section className="py-20 border-t border-border-subtle bg-[#0a0a0a]">
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-[60px]">
+        <div className="max-w-[900px]">
+          <FadeIn>
+            <h2 className="text-fluid-h2 font-semibold text-white text-balance tracking-tight">
+              {title}
+            </h2>
+          </FadeIn>
+          <FadeIn delay={0.15}>
+            <div className="mt-10">
+              <Button variant="critical" size="xl" asChild>
+                <Link href={ctaHref}>{ctaText}</Link>
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

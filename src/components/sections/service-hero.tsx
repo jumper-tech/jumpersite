@@ -21,38 +21,49 @@ export function ServiceHero({
   gradient = "/assets/gradients/organic-04.png",
 }: ServiceHeroProps) {
   return (
-    <section className="relative py-20 sm:py-28 lg:py-32 overflow-hidden">
+    <section className="relative min-h-[50vh] flex items-end overflow-hidden">
       <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(ellipse 70% 60% at 30% 40%, rgba(250,71,33,0.10) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 70% at 70% 60%, rgba(129,67,167,0.06) 0%, transparent 60%),
+              #000000
+            `
+          }}
+        />
         <Image
           src={gradient}
           alt=""
           fill
-          className="object-cover opacity-25"
+          className="object-cover opacity-[0.05]"
           priority
         />
-        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <FadeIn>
-          <h1 className="text-fluid-h1 font-bold text-white leading-[1.1] text-balance">
-            {headline}
-          </h1>
-        </FadeIn>
+      <div className="relative z-10 mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-[60px] py-20">
+        <div className="max-w-[900px]">
+          <FadeIn>
+            <h1 className="text-[clamp(36px,5vw,56px)] font-bold text-white leading-[1.15] tracking-[-0.03em]">
+              {headline}
+            </h1>
+          </FadeIn>
 
-        <FadeIn delay={0.15}>
-          <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-3xl leading-relaxed">
-            {subheadline}
-          </p>
-        </FadeIn>
+          <FadeIn delay={0.15}>
+            <p className="mt-6 text-[17px] text-text-secondary max-w-[600px] leading-[1.8]">
+              {subheadline}
+            </p>
+          </FadeIn>
 
-        <FadeIn delay={0.3}>
-          <div className="mt-10">
-            <Button variant="critical" size="xl" asChild>
-              <Link href={ctaHref}>{ctaText}</Link>
-            </Button>
-          </div>
-        </FadeIn>
+          <FadeIn delay={0.3}>
+            <div className="mt-10">
+              <Button variant="critical" size="xl" asChild>
+                <Link href={ctaHref}>{ctaText}</Link>
+              </Button>
+            </div>
+          </FadeIn>
+        </div>
       </div>
     </section>
   );

@@ -12,12 +12,12 @@ export function Section({ children, className, id, dark }: SectionProps) {
     <section
       id={id}
       className={cn(
-        "py-16 sm:py-20 lg:py-24",
+        "py-20 border-t border-border-subtle",
         dark && "bg-[#0a0a0a]",
         className
       )}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      <div className="mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-[60px]">{children}</div>
     </section>
   );
 }
@@ -26,12 +26,14 @@ export function SectionHeader({
   title,
   subtitle,
   className,
-  align = "center",
+  align = "left",
+  label,
 }: {
-  title: string;
+  title: string | React.ReactNode;
   subtitle?: string;
   className?: string;
   align?: "center" | "left";
+  label?: string;
 }) {
   return (
     <div
@@ -41,11 +43,22 @@ export function SectionHeader({
         className
       )}
     >
-      <h2 className="text-fluid-h2 font-bold text-foreground text-balance">
+      {label && (
+        <div className="flex items-center gap-3 mb-3">
+          <span className="w-8 h-px bg-jumper-orange" />
+          <span className="font-mono text-[10px] tracking-[0.2em] uppercase text-text-muted">
+            {label}
+          </span>
+        </div>
+      )}
+      <h2 className="text-fluid-h2 font-semibold text-foreground text-balance tracking-tight">
         {title}
       </h2>
       {subtitle && (
-        <p className="mt-4 text-lg text-muted-foreground max-w-3xl mx-auto text-balance">
+        <p className={cn(
+          "mt-8 text-[15px] leading-[1.85] text-text-secondary max-w-[720px] text-balance",
+          align === "center" && "mx-auto"
+        )}>
           {subtitle}
         </p>
       )}

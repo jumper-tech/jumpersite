@@ -48,17 +48,25 @@ const config: Config = {
           gray: "#C6CBD4",
           "dark-gray": "#3E3D40",
         },
+        purple: {
+          DEFAULT: "#8143A7",
+        },
+        "border-subtle": "hsl(var(--border-subtle))",
+        "border-medium": "hsl(var(--border-medium))",
+        "text-secondary": "hsl(var(--text-secondary))",
+        "text-muted": "hsl(var(--text-muted))",
       },
       fontFamily: {
         sans: [
-          "Inter",
+          "var(--font-sans)",
+          "DM Sans",
           "-apple-system",
           "BlinkMacSystemFont",
           "Segoe UI",
           "Roboto",
           "sans-serif",
         ],
-        mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+        mono: ["var(--font-mono)", "DM Mono", "ui-monospace", "monospace"],
       },
       fontSize: {
         "fluid-h1": "clamp(2rem, 1.5rem + 2.5vw, 3.5rem)",

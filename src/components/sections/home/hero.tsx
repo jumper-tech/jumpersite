@@ -8,42 +8,52 @@ import { FadeIn } from "@/components/ui/motion";
 
 export function HeroSection() {
   return (
-    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background gradient */}
+    <section className="relative min-h-[60vh] flex items-end overflow-hidden">
+      {/* Editorial gradients */}
       <div className="absolute inset-0 z-0">
+        <div 
+          className="absolute inset-0"
+          style={{
+            background: `
+              radial-gradient(ellipse 80% 60% at 20% 30%, rgba(250,71,33,0.12) 0%, transparent 60%),
+              radial-gradient(ellipse 60% 80% at 80% 70%, rgba(129,67,167,0.08) 0%, transparent 60%),
+              #000000
+            `
+          }}
+        />
         <Image
           src="/assets/gradients/organic-01.png"
           alt=""
           fill
-          className="object-cover opacity-30"
+          className="object-cover opacity-[0.06]"
           priority
         />
-        <div className="absolute inset-0 bg-black/60" />
       </div>
 
-      <div className="relative z-10 mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-20">
-        <div className="max-w-3xl">
+      <div className="relative z-10 mx-auto max-w-[1100px] px-4 sm:px-6 lg:px-[60px] py-20">
+        <div className="max-w-[900px]">
           <FadeIn delay={0.1}>
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-jumper-orange/30 bg-jumper-orange/10 px-4 py-1.5 text-sm text-jumper-orange">
-              <span className="h-1.5 w-1.5 rounded-full bg-jumper-orange animate-pulse" />
-              +34% de conversões recuperadas com tracking server-side
+            <div className="mb-6 flex items-center gap-3">
+              <span className="w-8 h-px bg-jumper-orange" />
+              <span className="font-mono text-[11px] tracking-[0.18em] uppercase text-jumper-orange">
+                Arquitetura de Performance Digital
+              </span>
             </div>
           </FadeIn>
 
           <FadeIn delay={0.2}>
-            <h1 className="text-fluid-h1 font-bold text-white leading-[1.1] text-balance">
+            <h1 className="text-[clamp(36px,5vw,56px)] font-bold text-white leading-[1.15] tracking-[-0.03em]">
               Seus anúncios estão rodando.{" "}
-              <span className="text-jumper-orange">
+              <span className="text-text-muted font-light">
                 Suas conversões estão sumindo.
               </span>
             </h1>
           </FadeIn>
 
           <FadeIn delay={0.35}>
-            <p className="mt-6 text-lg sm:text-xl text-gray-300 max-w-2xl leading-relaxed">
-              Arquitetura de Performance: gestão de tráfego pago com tracking
-              server-side, CRM integrado e atendimento via WhatsApp. Tudo numa
-              máquina só.
+            <p className="mt-5 text-[17px] text-text-secondary max-w-[600px] leading-[1.8]">
+              Gestão de tráfego pago com tracking server-side, CRM integrado e atendimento via WhatsApp. 
+              Recupere até 40% das conversões perdidas.
             </p>
           </FadeIn>
 
@@ -58,6 +68,12 @@ export function HeroSection() {
                 </a>
               </Button>
             </div>
+          </FadeIn>
+          
+          <FadeIn delay={0.65}>
+            <p className="mt-10 font-mono text-[11px] text-text-muted tracking-[0.05em]">
+              Fevereiro 2026 · R$ 30M+ investidos em campanhas digitais
+            </p>
           </FadeIn>
         </div>
       </div>

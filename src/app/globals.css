@@ -26,23 +26,40 @@
   }
 
   .dark {
-    --background: 0 0% 0%;
+    /* Background layers (editorial design) */
+    --background: 0 0% 0%;           /* Pure black #000000 */
+    --bg-secondary: 0 0% 4%;         /* #0A0A0A */
     --foreground: 0 0% 100%;
-    --card: 240 3% 9%;
+    --card: 0 0% 7%;                 /* #111111 */
     --card-foreground: 0 0% 100%;
+    --card-hover: 0 0% 9%;           /* #161616 */
     --popover: 0 0% 0%;
     --popover-foreground: 0 0% 100%;
-    --primary: 14 95% 55%;
+    
+    /* Brand colors */
+    --primary: 14 95% 55%;           /* Orange #FA4721 */
     --primary-foreground: 0 0% 100%;
+    --purple: 275 43% 46%;           /* Purple #8143A7 */
     --secondary: 220 9% 46%;
     --secondary-foreground: 0 0% 100%;
+    
+    /* Text hierarchy */
+    --text-primary: 0 0% 100%;       /* #FFFFFF */
+    --text-secondary: 0 0% 60%;      /* #999999 */
+    --text-muted: 0 0% 33%;          /* #555555 */
     --muted: 240 3% 9%;
-    --muted-foreground: 220 14% 68%;
+    --muted-foreground: 0 0% 60%;
+    
+    /* Borders (editorial design) */
+    --border-subtle: 0 0% 12%;       /* #1E1E1E */
+    --border-medium: 0 0% 16%;       /* #2A2A2A */
+    --border: 0 0% 12%;
+    --input: 240 3% 25%;
+    
+    /* Accent & utility */
     --accent: 240 3% 25%;
     --accent-foreground: 0 0% 100%;
     --destructive: 0 84% 60%;
-    --border: 240 3% 25%;
-    --input: 240 3% 25%;
     --ring: 220 9% 46%;
   }
 
@@ -52,10 +69,16 @@
 
   body {
     @apply bg-background text-foreground antialiased;
+    line-height: 1.7;
   }
 
   h1, h2, h3, h4, h5, h6 {
     @apply font-semibold tracking-tight;
+  }
+  
+  /* Editorial body text */
+  p {
+    line-height: 1.85;
   }
 }
 
