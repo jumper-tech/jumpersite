@@ -6,8 +6,8 @@
 <title>Jumper Studio — Where data becomes performance</title>
 <meta name="description" content="Arquitetura de performance para empresas com funis complexos. Rastreamento server-side, infraestrutura de dados e tecnologia que gera resultado.">
 <link rel="icon" href="assets/favicon.png">
-<link rel="stylesheet" href="colors_and_type.css">
-<link rel="stylesheet" href="css/site.css?v=3">
+<link rel="stylesheet" href="colors_and_type.css?v=1776698900000">
+<link rel="stylesheet" href="css/site.css?v=1776698900000">
 <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
@@ -17,11 +17,11 @@
   <div class="wrap bar">
     <a class="brand is-hidden" href="/"><img src="assets/logos/jumper-white.png" alt="Jumper"></a>
     <nav>
-      <a href="/#solucoes">Soluções</a>
-      <a href="/cases/">Cases</a>
-      <a href="/pensamento/">Pensamento</a>
-      <a href="/sobre">Sobre</a>
-      <a href="/contato">Contato</a>
+      <a href="#solucoes">Soluções</a>
+      <a href="cases/index.html">Cases</a>
+      <a href="pensamento/index.html">Pensamento</a>
+      <a href="sobre.html">Sobre</a>
+      <a href="#contato">Contato</a>
     </nav>
     <div class="cta-row">
       <a class="btn btn-primary" href="https://wa.me/5521964369191" target="_blank" rel="noopener">Falar com a Jumper</a>
@@ -34,6 +34,7 @@
   <div class="hero-witness" aria-hidden="true">
     <canvas data-jumper-gradient></canvas>
   </div>
+  <div class="hero-scrim" aria-hidden="true"></div>
   <div class="hero-inner">
     <div class="hero-bar">
       <div class="mark">
@@ -54,7 +55,7 @@
       </div>
 
       <h1 class="hero-statement">
-        Transformamos problemas complexos em soluções únicas.
+        Transformamos <em>problemas complexos</em> em soluções <mark>únicas</mark>
       </h1>
 
       <p class="hero-claim">
@@ -66,7 +67,7 @@
           Falar com a Jumper
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
         </a>
-        <a class="btn btn-ghost btn-lg" href="/cases/">
+        <a class="btn btn-ghost btn-lg" href="cases/index.html">
           Ver cases
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M6 9l6 6 6-6"/></svg>
         </a>
@@ -85,10 +86,10 @@
   </div>
 </section>
 
-<!-- ============ CLIENT LOGOS ============ -->
+  <!-- ============ LOGOS ============ -->
 <section class="sec logos-section">
   <div class="wrap">
-    <div class="sec-eyebrow"><span class="dot"></span>Empresas que confiaram na Jumper</div>
+    <div class="sec-eyebrow"><span class="dot"></span>Quem confia</div>
     <div class="logos-carousel">
       <div class="logos-track">
         <img src="assets/logos/hibranding/sennheiser.svg" alt="Sennheiser">
@@ -119,24 +120,47 @@
       </p>
     </div>
 
-    <div class="services-grid">
-      <a class="svc" href="/cases/seven.html">
-        <div class="idx">01 <span class="line"></span> Clínica Seven</div>
-        <h3 class="title">Multiplicamos por 50 o investimento em anúncios. De maneira lucrativa.</h3>
-        <p class="desc">A maior clínica de emagrecimento do Brasil. De R$60k para milhões por mês com rastreamento avançado e arquitetura de performance.</p>
-        <span class="arrow">Ler case →</span>
+    <div class="cases-editorial">
+      <a class="case-row" href="cases/seven.html">
+        <div class="num">01</div>
+        <div class="head">
+          <span class="client">Clínica Seven</span>
+          <h3>Multiplicamos por 50 o investimento em anúncios. De maneira lucrativa.</h3>
+          <p class="body">A maior clínica de emagrecimento do Brasil. De R$60k para milhões por mês com rastreamento avançado e arquitetura de performance.</p>
+        </div>
+        <div class="metric">
+          <span class="val">50×</span>
+          <span class="lbl">Investimento</span>
+        </div>
+        <span class="arrow">Ler case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="svc" href="/cases/creamy-skelt.html">
-        <div class="idx">02 <span class="line"></span> Creamy Skin Care</div>
-        <h3 class="title">+25% de qualidade de mensuração. Até 15% a mais em vendas.</h3>
-        <p class="desc">Indústria de cosméticos com 3 marcas. Auditoria completa de rastreamento. Quando os dados ficam impecáveis, o budget escala sozinho.</p>
-        <span class="arrow">Ler case →</span>
+
+      <a class="case-row" href="cases/creamy-skelt.html">
+        <div class="num">02</div>
+        <div class="head">
+          <span class="client">Creamy Skin Care</span>
+          <h3>+25% de qualidade de mensuração. Até 15% a mais em vendas.</h3>
+          <p class="body">Indústria de cosméticos com 3 marcas. Auditoria completa de rastreamento. Quando os dados ficam impecáveis, o budget escala sozinho.</p>
+        </div>
+        <div class="metric">
+          <span class="val">+25%</span>
+          <span class="lbl">Mensuração</span>
+        </div>
+        <span class="arrow">Ler case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
-      <a class="svc" href="/cases/almeida-prado.html">
-        <div class="idx">03 <span class="line"></span> Almeida Prado</div>
-        <h3 class="title">Uma empresa de 80 anos entrou no mercado digital.</h3>
-        <p class="desc">Farmácia de homeopatia que investia em televisão. De consultoria a provedor oficial de tecnologia — portal, e-commerce, IA.</p>
-        <span class="arrow">Ler case →</span>
+
+      <a class="case-row" href="cases/almeida-prado.html">
+        <div class="num">03</div>
+        <div class="head">
+          <span class="client">Almeida Prado</span>
+          <h3>Uma empresa de 80 anos entrou no mercado digital.</h3>
+          <p class="body">Farmácia de homeopatia que investia em televisão. De consultoria a provedor oficial de tecnologia — portal, e-commerce, IA.</p>
+        </div>
+        <div class="metric">
+          <span class="val">80+</span>
+          <span class="lbl">Anos de marca</span>
+        </div>
+        <span class="arrow">Ler case <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
       </a>
     </div>
   </div>
@@ -157,22 +181,22 @@
 
     <div class="diff-list">
       <div class="diff-item">
-        <div class="num">01 / Rastreamento</div>
+        <div class="num">01</div>
         <h3>Tracking server-side avançado</h3>
-        <p>Devolver pra plataforma os sinais certos. O algoritmo aprende com dados reais, não com ruído. O resultado escala porque os dados são confiáveis.</p>
+        <p>Devolver para a plataforma os sinais certos. O algoritmo aprende com dados reais, não com ruído. O resultado escala porque os dados são confiáveis.</p>
       </div>
       <div class="diff-item">
-        <div class="num">02 / Arquitetura</div>
+        <div class="num">02</div>
         <h3>Infraestrutura de performance</h3>
         <p>Mapeamento completo do funil. Site, stack, CRM, ferramentas — tudo funciona junto. Antes de configurar campanha, a gente garante que a fundação aguenta.</p>
       </div>
       <div class="diff-item">
-        <div class="num">03 / Produto</div>
+        <div class="num">03</div>
         <h3>JumperChat e automações</h3>
         <p>Produto próprio de automação de atendimento. IA aplicada onde faz diferença — no fluxo real do cliente, não no deck.</p>
       </div>
       <div class="diff-item">
-        <div class="num">04 / Desenvolvimento</div>
+        <div class="num">04</div>
         <h3>Desenvolvimento personalizado</h3>
         <p>Portais, plataformas, integrações e ferramentas sob medida. Quando o problema não tem solução pronta, a gente constrói.</p>
       </div>
@@ -185,12 +209,17 @@
   <div class="bg"><canvas data-jumper-gradient aria-hidden="true"></canvas></div>
   <div class="scrim" aria-hidden="true"></div>
   <div class="wrap">
-    <h2>O problema que você acha que é de campanha provavelmente é de arquitetura.</h2>
-    <p>Se o investimento em marketing não escala com previsibilidade, o problema não é o criativo — é a infraestrutura. A gente começa mapeando seu funil.</p>
-    <a class="btn btn-primary btn-lg" href="https://wa.me/5521964369191" target="_blank" rel="noopener">
-      Agendar diagnóstico
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-    </a>
+    <div>
+      <div class="eyebrow"><span class="dot"></span>Começar</div>
+      <h2>O problema que você acha que é de campanha <em>provavelmente é de arquitetura.</em></h2>
+    </div>
+    <div class="aside">
+      <p>Se o investimento em marketing não escala com previsibilidade, o problema não é o criativo — é a infraestrutura. A gente começa mapeando seu funil.</p>
+      <a class="btn btn-primary btn-lg" href="https://wa.me/5521964369191" target="_blank" rel="noopener">
+        Agendar diagnóstico
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </div>
   </div>
 </section>
 
@@ -205,19 +234,19 @@
       <div class="foot-col">
         <h5>Soluções</h5>
         <ul>
-          <li><a href="/#solucoes">Rastreamento Server-Side</a></li>
-          <li><a href="/#solucoes">Arquitetura de Dados</a></li>
-          <li><a href="/#solucoes">JumperChat</a></li>
-          <li><a href="/#solucoes">Desenvolvimento Personalizado</a></li>
-          <li><a href="/#solucoes">Diagnóstico</a></li>
+          <li><a href="#solucoes">Rastreamento Server-Side</a></li>
+          <li><a href="#solucoes">Arquitetura de Dados</a></li>
+          <li><a href="#solucoes">JumperChat</a></li>
+          <li><a href="#solucoes">Desenvolvimento Personalizado</a></li>
+          <li><a href="#solucoes">Diagnóstico</a></li>
         </ul>
       </div>
       <div class="foot-col">
         <h5>Empresa</h5>
         <ul>
-          <li><a href="/cases/">Cases</a></li>
-          <li><a href="/sobre">Sobre</a></li>
-          <li><a href="/contato">Contato</a></li>
+          <li><a href="cases/index.html">Cases</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </div>
       <div class="foot-col">

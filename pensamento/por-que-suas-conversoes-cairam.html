@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Por que suas conversões do Meta Ads caíram em março de 2026 | Pensamento | Jumper Studio</title>
+<meta name="description" content="Um cliente nosso com alto investimento em Meta Ads viu a atribuição cair 40% de um dia pro outro. Pixel, CAPI e EMQ intactos. O problema era invisível — e não estava no tracking.">
+<link rel="icon" href="../assets/favicon.png">
+<link rel="stylesheet" href="../colors_and_type.css?v=1776698500000">
+<link rel="stylesheet" href="../css/site.css?v=1776698500000">
+<link rel="stylesheet" href="../css/article.css?v=1776698500000">
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="wrap bar">
+    <a class="brand" href="../index.html"><img src="../assets/logos/jumper-white.png" alt="Jumper"></a>
+    <nav>
+      <a href="../index.html#solucoes">Soluções</a>
+      <a href="../cases/index.html">Cases</a>
+      <a href="index.html">Pensamento</a>
+      <a href="../sobre.html">Sobre</a>
+      <a href="../index.html#contato">Contato</a>
+    </nav>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/5521964369191">Falar com a Jumper</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ ARTICLE ============ -->
+<article class="article-wrap">
+  <div class="wrap">
+
+    <header class="article-header">
+      <a class="back-link" href="index.html">← Pensamento</a>
+      <div class="article-meta">
+        <span class="article-tag">Meta Ads</span>
+        <span class="sep">·</span>
+        <time datetime="2026-03-14">14 de março de 2026</time>
+        <span class="sep">·</span>
+        <span>12 min de leitura</span>
+        <span class="sep">·</span>
+        <span>Artigo N° 01</span>
+      </div>
+      <h1 class="article-title">
+        Por que suas conversões do Meta Ads caíram em março de 2026 (e o que fazer agora).
+      </h1>
+      <p class="article-lede">
+        Um cliente nosso com alto investimento em Meta Ads viu a atribuição cair 40% de um dia pro outro. Pixel funcionando. CAPI funcionando. Event Match Quality em 9.3 — no topo da escala. Tudo intacto. O problema era invisível.
+      </p>
+    </header>
+
+    <div class="article-body">
+
+      <p>Descobrimos isso na prática. Se as conversões reportadas no seu Ads Manager caíram em março sem explicação aparente, este artigo explica o que mudou e o que você precisa fazer agora.</p>
+
+      <h2>Como identificar se você foi afetado</h2>
+
+      <p>Se você notou uma queda abrupta nas conversões atribuídas — não gradual, mas de um dia pro outro — e nenhuma das verificações abaixo aponta problema, é provável que a causa <strong>não seja técnica</strong>:</p>
+
+      <ul>
+        <li><strong>O pixel continua disparando normalmente.</strong> O Meta recebe os eventos de compra. Se você comparar o volume de eventos recebidos (no Gerenciador de Eventos) com as vendas reais do seu gateway ou CRM, os números batem ou até excedem o real — já que o pixel também pode capturar pedidos de Pix antes da confirmação de pagamento.</li>
+        <li><strong>A CAPI funciona no teste.</strong> Se você disparar um evento de teste pela ferramenta do Meta, ele chega completo — com email, telefone, nome, sobrenome. Os dados de identificação estão sendo entregues.</li>
+        <li><strong>O Event Match Quality está alto.</strong> Numa escala até 10 onde a nota máxima é praticamente inatingível, um EMQ acima de 8 pra Purchase significa que o Meta sabe quem são seus compradores. A identificação não é o problema.</li>
+        <li><strong>Nenhuma configuração de tracking mudou.</strong> Sem atualização de plugin, sem alteração no servidor, sem mudança na estrutura de tags.</li>
+        <li><strong>A janela de atribuição nas campanhas não foi restringida.</strong> Ninguém mexeu nas configurações dos ad sets.</li>
+      </ul>
+
+      <p>Se tudo isso está ok e mesmo assim a atribuição caiu, continue lendo.</p>
+
+      <h2>Um método de diagnóstico: Purchase vs Checkout</h2>
+
+      <p>Existe uma técnica que pode confirmar se você foi afetado por essa mudança. Compare a taxa de atribuição de dois eventos: <strong>Purchase</strong> (compra confirmada) e <strong>InitiateCheckout</strong> (início do pagamento).</p>
+
+      <p>Os dois disparam no mesmo ambiente — mesmo domínio, mesmos parâmetros de tracking, mesmos cookies. A diferença está nos dados do comprador: o Purchase geralmente envia email e telefone (dados do pedido finalizado), enquanto o Checkout dispara antes do preenchimento do formulário e costuma ter menos dados de identificação.</p>
+
+      <p>Historicamente, o Purchase atribui melhor que o Checkout, justamente porque tem mais dados de matching. Se de repente os dois convergem pro mesmo patamar, algo mudou — e provavelmente não foi do seu lado.</p>
+
+      <blockquote>
+        <p>Se os dados de identificação continuam chegando mas a atribuição do Purchase caiu pro nível do Checkout, o problema não é de matching de identidade. É de matching de clique.</p>
+      </blockquote>
+
+      <p>O Meta sabe quem comprou, mas não consegue vincular a compra ao anúncio.</p>
+
+      <h2>O que o Meta mudou (e como avisou)</h2>
+
+      <p>Essa mudança não veio do nada — mas foi comunicada de uma forma que exige acompanhamento ativo de canais específicos. Quem não acompanha o blog Meta for Business ou as discussões técnicas da comunidade, a primeira notícia que recebeu foi o susto no Ads Manager.</p>
+
+      <p>A timeline:</p>
+
+      <ol class="timeline">
+        <li>
+          <span class="tl-date">Outubro de 2025</span>
+          <span class="tl-text">Anunciantes descobrem, via documentação da API, que o Meta contava likes, shares e saves como "cliques" nas janelas de atribuição. A descoberta gera debate no mercado, mas o Meta não se pronuncia oficialmente.</span>
+        </li>
+        <li>
+          <span class="tl-date">3 de fevereiro de 2026</span>
+          <span class="tl-text">O Meta publica um post reconhecendo que historicamente atribuía todos os tipos de cliques (share, save, like, link click) e que isso gerava inconsistência com ferramentas de terceiros como o Google Analytics. É o primeiro aviso oficial, mas num post de blog que poucos anunciantes acompanham.</span>
+        </li>
+        <li>
+          <span class="tl-date">3 de março de 2026</span>
+          <span class="tl-text">O Meta publica <em>"Simplifying Ad Measurement for a Social-First World"</em>, o anúncio formal detalhando as mudanças. Simon Whitcombe, VP of Global Business Group da Meta, comunica publicamente no LinkedIn.</span>
+        </li>
+        <li>
+          <span class="tl-date">Ao longo de março de 2026</span>
+          <span class="tl-text">O rollout começa de forma progressiva. Diferentes contas são impactadas em momentos diferentes, sem aviso individual.</span>
+        </li>
+      </ol>
+
+      <p>Na prática, a maioria dos anunciantes — especialmente donos de negócio e gestores que não vivem dentro da documentação do Meta — só descobriu a mudança quando os números caíram.</p>
+
+      <h2>O que mudou tecnicamente</h2>
+
+      <p>Três coisas aconteceram ao mesmo tempo.</p>
+
+      <h3>1. Click-through attribution agora só conta link clicks.</h3>
+      <p>Antes, qualquer interação com o anúncio — like, save, share, comentário, clique no link — contava como "click" pra fins de atribuição. Se a pessoa curtia o anúncio na segunda e comprava na quinta, isso aparecia como conversão click-through dentro da janela de 7 dias.</p>
+      <p>Agora, click-through só é registrado quando a pessoa efetivamente clica num link e chega ao site do anunciante. Curtir, salvar e compartilhar não contam mais como clique.</p>
+
+      <h3>2. As outras interações foram pro "engage-through attribution".</h3>
+      <p>As conversões que vinham de interações não-link (likes, saves, shares) agora aparecem numa nova categoria chamada <em>engage-through attribution</em>, que substituiu o antigo <em>engaged-view</em>. O detalhe crítico: a janela do engage-through é de apenas <strong>1 dia</strong>, não 7.</p>
+
+      <h3>3. O threshold de vídeo caiu de 10 pra 5 segundos.</h3>
+      <p>O que antes era uma visualização engajada de 10 segundos agora conta com apenas 5 segundos. Essa mudança aumenta o volume do engage-through pra campanhas de vídeo, mas não compensa a perda no click-through pra quem tem funil longo.</p>
+
+      <h2>O gap onde as conversões desaparecem</h2>
+
+      <p>A consequência mais impactante dessa mudança não é a reclassificação em si — é o <strong>gap entre as duas janelas de atribuição</strong>.</p>
+
+      <p>O cenário: uma pessoa vê seu anúncio no Instagram, curte, salva pra ver depois. Três dias depois, vai pro WhatsApp da sua empresa, conversa com o atendimento, e compra.</p>
+
+      <ul class="compare">
+        <li>
+          <span class="cp-label">No sistema antigo</span>
+          <span class="cp-text">Essa compra era atribuída como click-through (a interação "curtir" contava como clique, e a conversão aconteceu dentro de 7 dias).</span>
+        </li>
+        <li>
+          <span class="cp-label">No sistema novo</span>
+          <span class="cp-text">Essa compra não se qualifica como click-through (curtir não é link click) e também não se qualifica como engage-through (a conversão aconteceu 3 dias depois, fora da janela de 1 dia).</span>
+        </li>
+      </ul>
+
+      <blockquote>
+        <p>Essa conversão desaparece do relatório. Não está no click-through. Não está no engage-through. Não está em lugar nenhum.</p>
+      </blockquote>
+
+      <p>A venda aconteceu, o gateway registrou, o dinheiro entrou — mas o Ads Manager não mostra. Isso não é um bug. É consequência direta da nova estrutura de atribuição. E afeta qualquer negócio onde o tempo entre o primeiro contato com o anúncio e a conversão é maior que 24 horas.</p>
+
+      <h2>Quem é mais impactado</h2>
+
+      <p>Se você vende um produto de impulso — checkout direto no site, compra em 5 minutos — o impacto é mínimo. A maioria das conversões vem de link clicks diretos, e a janela de 7 dias do click-through cobre o ciclo de compra inteiro.</p>
+
+      <p>O impacto é proporcional a dois fatores: o <strong>tempo entre o primeiro contato e a conversão</strong>, e o <strong>peso das interações sociais no funil</strong>.</p>
+
+      <p>Funis com WhatsApp, agendamento ou atendimento humano são os mais afetados. A jornada naturalmente leva dias. O primeiro contato com o anúncio raramente é um link click direto — é mais provável que a pessoa salve, curta ou compartilhe antes de tomar a ação.</p>
+
+      <p>Tickets altos e compras deliberadas também sofrem mais. Ninguém compra um procedimento médico, um curso de R$5.000 ou um imóvel no impulso de um link click. A deliberação leva dias ou semanas.</p>
+
+      <p>Campanhas com foco em awareness e engajamento perdem visibilidade desproporcional. Antes, uma campanha de vídeo que gerava saves e shares podia mostrar conversões atribuídas. Agora, se a conversão não acontece em 24 horas, desaparece do report.</p>
+
+      <p>Setores como clínicas, consultorias, imobiliárias, serviços B2B, educação, e qualquer negócio que depende de atendimento humano antes da venda estão nesse grupo de risco.</p>
+
+      <h2>O que fazer agora</h2>
+
+      <ol class="actions">
+        <li>
+          <span class="ac-num">01</span>
+          <h3>Não tome decisões baseado em dados incompletos</h3>
+          <p>O erro mais caro é olhar a queda no Ads Manager e reagir cortando investimento ou trocando de estratégia. A performance real não mudou — o que mudou foi como o Meta reporta. Antes de qualquer decisão de budget, entenda quanto da queda é reclassificação e quanto (se algo) é perda real de performance.</p>
+        </li>
+        <li>
+          <span class="ac-num">02</span>
+          <h3>Verifique se o engage-through está habilitado nas suas campanhas</h3>
+          <p>A configuração padrão agora é <em>7-day click, 1-day engage-through, 1-day view</em>. Mas campanhas mais antigas podem não ter o engage-through habilitado. Vá em cada ad set ativo, edite, e verifique a configuração de atribuição. Se só mostra <em>7-day click, 1-day view</em> sem o engage-through, atualize. Sem isso, você perde visibilidade sobre conversões que ainda são rastreáveis.</p>
+        </li>
+        <li>
+          <span class="ac-num">03</span>
+          <h3>Adicione as colunas certas no Ads Manager</h3>
+          <p>O Ads Manager agora oferece colunas pra separar conversões por tipo de atribuição (click-through, engage-through, view-through). Adicione todas. Use a funcionalidade <em>Compare Attribution Settings</em> pra ver como os números mudam entre janelas. Sem essas colunas, você está operando com dados parciais.</p>
+        </li>
+        <li>
+          <span class="ac-num">04</span>
+          <h3>Cruze dados reais de venda com dados do Meta</h3>
+          <p>Se você tem acesso aos dados reais de venda — gateway de pagamento, CRM, plataforma de e-commerce — compare diariamente com o que o Meta reporta. A diferença entre os dois números é a medida exata do impacto dessa mudança no seu negócio. Esse cruzamento é a sua fonte de verdade.</p>
+        </li>
+        <li>
+          <span class="ac-num">05</span>
+          <h3>Construa o seu próprio critério de atribuição</h3>
+          <p>Pra quem tem funil longo e ticket alto, depender exclusivamente do Ads Manager pra medir resultado já não é suficiente. A pergunta certa não é <em>"qual ferramenta devo usar?"</em> — é <em>"o que, pro meu negócio, conta como uma conversão atribuída ao Meta Ads?"</em></p>
+          <p>Essa resposta vem de cruzar suas fontes: gateway de pagamento, CRM, analytics, dados da plataforma. É construir uma visão que é sua — não da Meta, não de nenhum fornecedor. Ferramentas como Hyros, Triple Whale, Northbeam ou RedTrack podem operacionalizar esse sistema, mas a ferramenta é o meio, não o fim. Quem tem o próprio critério de atribuição não entra em pânico quando a plataforma muda as regras.</p>
+        </li>
+        <li>
+          <span class="ac-num">06</span>
+          <h3>Comunique proativamente</h3>
+          <p>Se você é agência, gestor de tráfego ou consultor, esse é o momento de ser transparente com seus clientes. Explique a mudança antes que eles vejam os números e tirem conclusões erradas. Mostre o cruzamento com os dados reais. Quem comunica primeiro controla a narrativa — quem espera o cliente perguntar já está na defensiva.</p>
+          <p>Se você é dono de negócio e sua agência não mencionou essa mudança, pergunte. Não pra cobrar, mas pra entender como estão medindo e se os dados que você recebe refletem a realidade.</p>
+        </li>
+      </ol>
+
+      <h2>Resumo</h2>
+
+      <p>O Meta mudou as regras de atribuição em março de 2026. Click-through agora só conta link clicks. Interações sociais foram pro engage-through com janela de 1 dia. Conversões de interações sociais que acontecem após 24 horas desapareceram do relatório.</p>
+
+      <p>A performance real do seu negócio provavelmente não mudou. A forma como ela é medida e reportada, sim.</p>
+
+      <p><strong>Antes de tomar qualquer decisão, tenha certeza de que você está lendo os dados completos.</strong></p>
+
+    </div>
+
+    <!-- REFERENCES -->
+    <aside class="article-refs">
+      <h3>Referências</h3>
+      <ol>
+        <li>
+          <a href="#" target="_blank" rel="noopener">Meta for Business — <em>Simplifying Ad Measurement for a Social-First World</em></a>
+          <span>Anúncio oficial da mudança · 3 de março de 2026</span>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener">Jon Loomer — <em>Click-Through Attribution Now Requires a Link Click</em></a>
+          <span>Confirmação independente de como o click-through funcionava antes</span>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener">Jon Loomer — <em>How Meta Ads Attribution Works in 2026</em></a>
+          <span>Guia completo da nova estrutura de atribuição</span>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener">Search Engine Land — <em>Meta introduces click and engage-through attribution updates</em></a>
+          <span>Cobertura jornalística do anúncio</span>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener">AdExchanger — <em>Meta Has A New Way To Measure Social Engagement</em></a>
+          <span>Análise do impacto no mercado</span>
+        </li>
+        <li>
+          <a href="#" target="_blank" rel="noopener">Ads Uploader — <em>Meta Click Attribution in 2026: Only Link Clicks Count Now</em></a>
+          <span>Explicação técnica do gap entre janelas de atribuição</span>
+        </li>
+      </ol>
+    </aside>
+
+    <!-- AUTHOR -->
+    <footer class="article-author">
+      <div class="author-avatar-fallback">BM</div>
+      <div class="author-info">
+        <strong>Bruno Maya</strong>
+        <p>CEO da Jumper Studio. Especialista em tracking, atribuição e arquitetura de performance para e-commerce e negócios com funil longo.</p>
+        <a href="https://linkedin.com/in/brunomaya" target="_blank" rel="noopener">LinkedIn →</a>
+      </div>
+    </footer>
+
+    <!-- NEXT -->
+    <section class="article-related">
+      <h3>Próxima edição</h3>
+      <a class="related-next" href="index.html">
+        <span class="rn-num">N° 02 · Abril 2026</span>
+        <span class="rn-title">Server-side tagging não é uma feature. É uma mudança de arquitetura.</span>
+        <span class="rn-status">Em edição</span>
+      </a>
+    </section>
+
+  </div>
+</article>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© <span id="y"></span> Jumper Studio — Where data becomes performance.</span>
+      <div class="legal">
+        <a href="#">Privacidade</a>
+        <a href="#">Termos</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+</body>
+</html>
